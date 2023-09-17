@@ -11,6 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 class UserFragment : BaseFragment<FragmentUserBinding>(FragmentUserBinding::inflate) {
 
+    //CS 42
 
 
 
