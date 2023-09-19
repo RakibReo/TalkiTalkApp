@@ -1,6 +1,7 @@
 package com.example.tukitakirt.di
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
 import dagger.Provides
@@ -27,6 +28,12 @@ class FireBaseProvider {
     @Singleton
     fun provideDb(): FirebaseDatabase {
         return FirebaseDatabase.getInstance()
+    }
+
+  @Provides
+  @Singleton
+    fun provideDBReference(firebase: FirebaseDatabase): DatabaseReference {
+        return firebase.getReference("user")
     }
 
 }

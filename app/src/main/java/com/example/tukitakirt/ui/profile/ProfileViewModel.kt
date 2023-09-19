@@ -1,6 +1,7 @@
 package com.example.tukitakirt.ui.profile
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,6 +11,7 @@ import com.example.tukitakirt.repositories.UserRepo
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.core.Context
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -61,7 +63,7 @@ class ProfileViewModel @Inject constructor(private val userRepo: UserRepo) : Vie
     private var _resposneAllUser = MutableLiveData<List<UserProfile>>()
     val responseAllUserProfile: LiveData<List <UserProfile>> = _resposneAllUser
 
-    fun getAllUser(userId: String) {
+    fun getAllUser() {
 
         val userList= mutableListOf<UserProfile>()
 
@@ -82,9 +84,9 @@ class ProfileViewModel @Inject constructor(private val userRepo: UserRepo) : Vie
                             userList.add(it)
 
 
+
+
                         }
-
-
 
 
                     }
@@ -96,7 +98,7 @@ class ProfileViewModel @Inject constructor(private val userRepo: UserRepo) : Vie
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    Log.w("TAG", "Failed to read value.", error.toException())
+                 Log.d("DATA","GET{$error}")
                 }
 
             })

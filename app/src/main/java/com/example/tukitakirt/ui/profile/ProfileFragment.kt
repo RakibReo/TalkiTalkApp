@@ -1,5 +1,6 @@
 package com.example.tukitakirt.ui.profile
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -48,14 +49,15 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         }
 
         viewModel.responseUserProfile.observe(viewLifecycleOwner) {
-
+    Log.i("TAG","Data{$it}")
             binding.apply {
                 userName.text = it.name
                 userEmail.text = it.email
                 userAbout.text = it.about
-
                 profileImage.load(it.image)
                 coverImage.load(it.image)
+
+
 
 
 
