@@ -9,7 +9,7 @@ data class RequestUserRegister(
     var createdAt: Long?=null,
     var updatedAt: Long?=null,
     var image: String="",
-    val email: String,     //cs-3
+    val email: String="",     //cs-3
     var about: String="",
     var token :String="",
     var mobile: String?=null

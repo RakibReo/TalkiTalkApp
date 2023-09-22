@@ -1,5 +1,4 @@
 package com.example.tukitakirt.ui.user
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -10,7 +9,7 @@ import com.example.tukitakirt.data.user.UserProfile
 import com.example.tukitakirt.databinding.ItemUserBinding
 
 //CS 41
-class UserAdapter (private val  listener: Listener):  //cs44
+class UserAdapter (private var  listener: Listener):  //cs44
     ListAdapter<UserProfile,UserAdapter.UserViewHolder>(Comparator){
 
 
@@ -36,7 +35,7 @@ class UserAdapter (private val  listener: Listener):  //cs44
                       userNameTv.text=it.name
                       userEmailTv.text=it.email
                       userBioTv.text =it.about
-                      //profileImage.load(it.image)
+                      profileImage.load(it.image)
 
                   }
 

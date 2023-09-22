@@ -58,7 +58,8 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                     email = email,
                     password = password,
                     createdAt = System.currentTimeMillis(),
-                    image = DummyImgLink)
+                    image = DummyImgLink
+                )
                 viewModel.registration(request)
 
             }
@@ -73,15 +74,9 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
 
         }
 
-
-
-
-
         super.onViewCreated(view, savedInstanceState)
+
     }
-
-
-
 
 
 

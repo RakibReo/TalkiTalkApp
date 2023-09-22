@@ -1,8 +1,11 @@
 package com.example.tukitakirt.di
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,10 +33,18 @@ class FireBaseProvider {
         return FirebaseDatabase.getInstance()
     }
 
-  @Provides
-  @Singleton
-    fun provideDBReference(firebase: FirebaseDatabase): DatabaseReference {
-        return firebase.getReference("user")
+    @Provides
+    @Singleton
+    fun provideStorage(): StorageReference {
+        return FirebaseStorage.getInstance().reference
     }
+
+    @Provides
+    @Singleton
+    fun provideUser(): FirebaseUser {
+        return FirebaseAuth.getInstance().currentUser!!
+    }
+
+
 
 }

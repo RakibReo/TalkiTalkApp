@@ -4,12 +4,8 @@ import android.view.View
 import com.example.tukitakirt.R
 import com.example.tukitakirt.base.BaseFragment
 import com.example.tukitakirt.databinding.FragmentHomeBinding
-import dagger.hilt.android.AndroidEntryPoint
 
-
-//CS-29
-
-@AndroidEntryPoint
+//CS-29//No entry point
 
 class HomeFragment :BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 

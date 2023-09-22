@@ -77,7 +77,7 @@ class ProfileViewModel @Inject constructor(private val userRepo: UserRepo) : Vie
 
                     snapshot.children.forEach{ dataSnapshot ->
 
-                        val value = snapshot.getValue(UserProfile::class.java)
+                        val value = dataSnapshot.getValue(UserProfile::class.java)
 
                         value?.let {
 
@@ -98,7 +98,7 @@ class ProfileViewModel @Inject constructor(private val userRepo: UserRepo) : Vie
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                 Log.d("DATA","GET{$error}")
+                Log.w("TAG", "Failed to read value.", error.toException())
                 }
 
             })

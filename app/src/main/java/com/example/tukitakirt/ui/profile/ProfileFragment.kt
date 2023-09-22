@@ -9,6 +9,7 @@ import com.example.tukitakirt.R
 import com.example.tukitakirt.base.BaseFragment
 import com.example.tukitakirt.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -19,12 +20,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
 
     private val viewModel: ProfileViewModel by viewModels()
+    lateinit var user: FirebaseUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val user = FirebaseAuth.getInstance().currentUser
-        user?.let {
+      user = FirebaseAuth.getInstance().currentUser!!
+        user.let {
             viewModel.getUserById(it.uid)
         }
 

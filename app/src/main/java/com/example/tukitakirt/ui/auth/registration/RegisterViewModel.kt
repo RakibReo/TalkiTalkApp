@@ -25,7 +25,9 @@ class RegisterViewModel @Inject constructor(private val repo: AuthRepo,
     val responseRegistration: LiveData<String> = _resposne
 
 
-    fun registration(requestUserRegister: RequestUserRegister) {
+    fun registration(
+        requestUserRegister: RequestUserRegister
+    ) {
 
 
         viewModelScope.launch {
@@ -48,9 +50,6 @@ class RegisterViewModel @Inject constructor(private val repo: AuthRepo,
                                 _resposne.postValue(SuccessMessage)
                             } else {
                                 _resposne.postValue(ErrorMessage)
-
-
-
                                 _resposne.postValue(
                                     it.exception?.localizedMessage ?: ErrorMessage
                                 )

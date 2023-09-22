@@ -2,7 +2,7 @@ package com.example.tukitakirt.data.user
 
 
 //CS-20
-data class UserProfile(var userId: String?=null,
+data class UserProfile(var userId: String="",
                        var createdAt: Long?=null,
                        var updatedAt: Long?=null,
                        var image: String="",
@@ -10,4 +10,6 @@ data class UserProfile(var userId: String?=null,
                        var email: String="",
                        var about: String="",
                        var token :String="",
-                       var mobile: String?=null)
+                       var mobile: String?=null
+
+)

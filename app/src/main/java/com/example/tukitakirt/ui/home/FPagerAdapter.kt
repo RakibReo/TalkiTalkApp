@@ -11,7 +11,7 @@ import com.example.tukitakirt.ui.user.UserFragment
 
 //CS-28
 
-class FPagerAdapter(private val fm: FragmentManager): FragmentPagerAdapter(fm) {
+class FPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
 
     var names = arrayOf("User", "Chat", "Profile")
 
